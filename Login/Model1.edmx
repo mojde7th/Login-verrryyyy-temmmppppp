@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="of1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'of1.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nchar" MaxLength="10" />
+          <Property Name="regno" Type="nvarchar" MaxLength="200" />
+          <Property Name="NATIONAL_NO" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="255" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="Father_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Birth_Date" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID_No" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sex_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="COMPANY_CODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="mg_code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Organ_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dept_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="PYRLCMP_CODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="Service_Year" Type="nvarchar" MaxLength="255" />
+          <Property Name="EMPLOYM_TYPE" Type="nvarchar" MaxLength="255" />
+          <Property Name="EDUCAT_LEVEL" Type="nvarchar" MaxLength="255" />
+          <Property Name="Post_Grade" Type="nvarchar" MaxLength="255" />
+          <Property Name="Job_Grade" Type="nvarchar" MaxLength="255" />
+          <Property Name="Post_Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="System_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="6626" Type="nvarchar(max)" />
+          <Property Name="6352" Type="nvarchar(max)" />
+          <Property Name="5184" Type="nvarchar(max)" />
+          <Property Name="6373" Type="nvarchar(max)" />
+          <Property Name="6356" Type="nvarchar(max)" />
+          <Property Name="5185" Type="nvarchar(max)" />
+          <Property Name="6357" Type="nvarchar(max)" />
+          <Property Name="6358" Type="nvarchar(max)" />
+          <Property Name="6369" Type="nvarchar(max)" />
+          <Property Name="6359" Type="nvarchar(max)" />
+          <Property Name="6362" Type="nvarchar(max)" />
+          <Property Name="6363" Type="nvarchar(max)" />
+          <Property Name="5181" Type="nvarchar(max)" />
+          <Property Name="6299" Type="nvarchar(max)" />
+          <Property Name="6178" Type="nvarchar(max)" />
+          <Property Name="6177" Type="nvarchar(max)" />
+          <Property Name="6364" Type="nvarchar(max)" />
+          <Property Name="6365" Type="nvarchar(max)" />
+          <Property Name="6353" Type="nvarchar(max)" />
+          <Property Name="5192" Type="nvarchar(max)" />
+          <Property Name="6366" Type="nvarchar(max)" />
+          <Property Name="6262" Type="nvarchar(max)" />
+          <Property Name="6367" Type="nvarchar(max)" />
+          <Property Name="6207" Type="nvarchar(max)" />
+          <Property Name="6206" Type="nvarchar(max)" />
+          <Property Name="6372" Type="nvarchar(max)" />
+          <Property Name="6368" Type="nvarchar(max)" />
+          <Property Name="5207" Type="nvarchar(max)" />
+          <Property Name="Main_NetSalary" Type="bigint" />
+          <Property Name="KI_NetSalary" Type="bigint" />
+        </EntityType>
+        <EntityType Name="month">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="monthname" Type="nchar" MaxLength="10" />
+          <Property Name="monthnum" Type="nchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nchar" MaxLength="10" />
+          <Property Name="Pass" Type="nchar" MaxLength="10" />
+          <Property Name="CompanyStatus" Type="nchar" MaxLength="1" />
+          <Property Name="CompanyCode" Type="nchar" MaxLength="1" />
+          <Property Name="PayrollStatus" Type="nchar" MaxLength="1" />
+          <Property Name="PayrollCode" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="year">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yearname" Type="nchar" MaxLength="12" />
+          <Property Name="yearnum" Type="nchar" MaxLength="2" />
+        </EntityType>
+        <EntityContainer Name="of1ModelStoreContainer">
+          <EntitySet Name="month" EntityType="Self.month" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="year" EntityType="Self.year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee].[Id] AS [Id], 
+    [Employee].[year] AS [year], 
+    [Employee].[regno] AS [regno], 
+    [Employee].[NATIONAL_NO] AS [NATIONAL_NO], 
+    [Employee].[Fname] AS [Fname], 
+    [Employee].[NAME] AS [NAME], 
+    [Employee].[Father_Name] AS [Father_Name], 
+    [Employee].[Birth_Date] AS [Birth_Date], 
+    [Employee].[ID_No] AS [ID_No], 
+    [Employee].[Sex_Code] AS [Sex_Code], 
+    [Employee].[COMPANY_CODE] AS [COMPANY_CODE], 
+    [Employee].[mg_code] AS [mg_code], 
+    [Employee].[Organ_Code] AS [Organ_Code], 
+    [Employee].[Dept_Code] AS [Dept_Code], 
+    [Employee].[PYRLCMP_CODE] AS [PYRLCMP_CODE], 
+    [Employee].[Service_Year] AS [Service_Year], 
+    [Employee].[EMPLOYM_TYPE] AS [EMPLOYM_TYPE], 
+    [Employee].[EDUCAT_LEVEL] AS [EDUCAT_LEVEL], 
+    [Employee].[Post_Grade] AS [Post_Grade], 
+    [Employee].[Job_Grade] AS [Job_Grade], 
+    [Employee].[Post_Title] AS [Post_Title], 
+    [Employee].[System_Code] AS [System_Code], 
+    [Employee].[6626] AS [6626], 
+    [Employee].[6352] AS [6352], 
+    [Employee].[5184] AS [5184], 
+    [Employee].[6373] AS [6373], 
+    [Employee].[6356] AS [6356], 
+    [Employee].[5185] AS [5185], 
+    [Employee].[6357] AS [6357], 
+    [Employee].[6358] AS [6358], 
+    [Employee].[6369] AS [6369], 
+    [Employee].[6359] AS [6359], 
+    [Employee].[6362] AS [6362], 
+    [Employee].[6363] AS [6363], 
+    [Employee].[5181] AS [5181], 
+    [Employee].[6299] AS [6299], 
+    [Employee].[6178] AS [6178], 
+    [Employee].[6177] AS [6177], 
+    [Employee].[6364] AS [6364], 
+    [Employee].[6365] AS [6365], 
+    [Employee].[6353] AS [6353], 
+    [Employee].[5192] AS [5192], 
+    [Employee].[6366] AS [6366], 
+    [Employee].[6262] AS [6262], 
+    [Employee].[6367] AS [6367], 
+    [Employee].[6207] AS [6207], 
+    [Employee].[6206] AS [6206], 
+    [Employee].[6372] AS [6372], 
+    [Employee].[6368] AS [6368], 
+    [Employee].[5207] AS [5207], 
+    [Employee].[Main_NetSalary] AS [Main_NetSalary], 
+    [Employee].[KI_NetSalary] AS [KI_NetSalary]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="of1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="month">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="monthname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="monthnum" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CompanyStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CompanyCode" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="PayrollStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="PayrollCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="year">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yearname" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="yearnum" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="regno" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NATIONAL_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Father_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID_No" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sex_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="COMPANY_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mg_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Organ_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dept_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PYRLCMP_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYM_TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EDUCAT_LEVEL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Post_Grade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Job_Grade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Post_Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="System_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C6626" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6352" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C5184" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6373" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6356" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C5185" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6357" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6358" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6369" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6359" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6362" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6363" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C5181" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6299" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6178" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6177" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6364" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6365" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6353" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C5192" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6366" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6262" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6367" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6207" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6206" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6372" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C6368" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C5207" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Main_NetSalary" Type="Int64" />
+          <Property Name="KI_NetSalary" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="of1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="months" EntityType="Self.month" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="years" EntityType="Self.year" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="of1ModelStoreContainer" CdmEntityContainer="of1Entities1">
+          <EntitySetMapping Name="months">
+            <EntityTypeMapping TypeName="of1Model.month">
+              <MappingFragment StoreEntitySet="month">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="monthname" ColumnName="monthname" />
+                <ScalarProperty Name="monthnum" ColumnName="monthnum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="of1Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="CompanyStatus" ColumnName="CompanyStatus" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="PayrollStatus" ColumnName="PayrollStatus" />
+                <ScalarProperty Name="PayrollCode" ColumnName="PayrollCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="years">
+            <EntityTypeMapping TypeName="of1Model.year">
+              <MappingFragment StoreEntitySet="year">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="yearname" ColumnName="yearname" />
+                <ScalarProperty Name="yearnum" ColumnName="yearnum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="of1Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="regno" ColumnName="regno" />
+                <ScalarProperty Name="NATIONAL_NO" ColumnName="NATIONAL_NO" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="ID_No" ColumnName="ID_No" />
+                <ScalarProperty Name="Sex_Code" ColumnName="Sex_Code" />
+                <ScalarProperty Name="COMPANY_CODE" ColumnName="COMPANY_CODE" />
+                <ScalarProperty Name="mg_code" ColumnName="mg_code" />
+                <ScalarProperty Name="Organ_Code" ColumnName="Organ_Code" />
+                <ScalarProperty Name="Dept_Code" ColumnName="Dept_Code" />
+                <ScalarProperty Name="PYRLCMP_CODE" ColumnName="PYRLCMP_CODE" />
+                <ScalarProperty Name="Service_Year" ColumnName="Service_Year" />
+                <ScalarProperty Name="EMPLOYM_TYPE" ColumnName="EMPLOYM_TYPE" />
+                <ScalarProperty Name="EDUCAT_LEVEL" ColumnName="EDUCAT_LEVEL" />
+                <ScalarProperty Name="Post_Grade" ColumnName="Post_Grade" />
+                <ScalarProperty Name="Job_Grade" ColumnName="Job_Grade" />
+                <ScalarProperty Name="Post_Title" ColumnName="Post_Title" />
+                <ScalarProperty Name="System_Code" ColumnName="System_Code" />
+                <ScalarProperty Name="C6626" ColumnName="6626" />
+                <ScalarProperty Name="C6352" ColumnName="6352" />
+                <ScalarProperty Name="C5184" ColumnName="5184" />
+                <ScalarProperty Name="C6373" ColumnName="6373" />
+                <ScalarProperty Name="C6356" ColumnName="6356" />
+                <ScalarProperty Name="C5185" ColumnName="5185" />
+                <ScalarProperty Name="C6357" ColumnName="6357" />
+                <ScalarProperty Name="C6358" ColumnName="6358" />
+                <ScalarProperty Name="C6369" ColumnName="6369" />
+                <ScalarProperty Name="C6359" ColumnName="6359" />
+                <ScalarProperty Name="C6362" ColumnName="6362" />
+                <ScalarProperty Name="C6363" ColumnName="6363" />
+                <ScalarProperty Name="C5181" ColumnName="5181" />
+                <ScalarProperty Name="C6299" ColumnName="6299" />
+                <ScalarProperty Name="C6178" ColumnName="6178" />
+                <ScalarProperty Name="C6177" ColumnName="6177" />
+                <ScalarProperty Name="C6364" ColumnName="6364" />
+                <ScalarProperty Name="C6365" ColumnName="6365" />
+                <ScalarProperty Name="C6353" ColumnName="6353" />
+                <ScalarProperty Name="C5192" ColumnName="5192" />
+                <ScalarProperty Name="C6366" ColumnName="6366" />
+                <ScalarProperty Name="C6262" ColumnName="6262" />
+                <ScalarProperty Name="C6367" ColumnName="6367" />
+                <ScalarProperty Name="C6207" ColumnName="6207" />
+                <ScalarProperty Name="C6206" ColumnName="6206" />
+                <ScalarProperty Name="C6372" ColumnName="6372" />
+                <ScalarProperty Name="C6368" ColumnName="6368" />
+                <ScalarProperty Name="C5207" ColumnName="5207" />
+                <ScalarProperty Name="Main_NetSalary" ColumnName="Main_NetSalary" />
+                <ScalarProperty Name="KI_NetSalary" ColumnName="KI_NetSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

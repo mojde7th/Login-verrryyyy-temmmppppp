@@ -1,0 +1,186 @@
+body {
+  background: #ccc;
+}
+.container {
+  margin: 10px auto;
+  text-align: center;
+}
+.btn-idonteven {
+  background: #ffa500;
+}
+.anp-export .popover {
+  width: 500px;
+  max-width: none;
+}
+.notify-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+.notify-container .notify-bubble {
+  position: absolute;
+  top: -8px;
+  right: -7px;
+  padding: 2px 5px 2px 6px;
+  background-color: #5cb85c;
+  color: #fff;
+  font-weight: normal;
+  font-size: 0.65em;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px #808080;
+  display: none;
+}
+.anp-export-popover-container {
+  padding: 15px;
+}
+.anp-export-popover-container .anp-export-btn-default {
+  color: #1a1a1a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.anp-export-popover-container .anp-export-btn-default:hover {
+  background-color: #ddd;
+}
+.anp-export-popover-container .anp-export-btn-default:focus,
+.anp-export-popover-container .anp-export-btn-default.focus,
+.anp-export-popover-container .anp-export-btn-default:active,
+.anp-export-popover-container .anp-export-btn-default.active {
+  color: #fff;
+  background-color: #888;
+  border-color: #888;
+}
+.anp-export-popover-container .anp-export-heading {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.anp-export-popover-container .anp-export-heading-download {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.anp-export-popover-container .anp-export-availability {
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #aaa;
+}
+.anp-export-popover-container .anp-export-form {
+  margin-top: 20px;
+}
+.anp-export-popover-container .btn-export {
+  text-align: right;
+  margin-top: 20px;
+}
+.anp-export-popover-container .anp-export-demodata {
+  margin-top: 20px;
+}
+.anp-export-popover-container .anp-export-demodata .anp-export-btn-reset {
+  float: right;
+  color: #000;
+  font-weight: normal;
+}
+.anp-export-popover-container .anp-export-demodata .anp-export-ul-demodata {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+}
+.anp-export-popover-container .anp-export-demodata .export-select,
+.anp-export-popover-container .anp-export-demodata .anp-export-ul-demodata {
+  height: 100px;
+}
+.anp-export-popover-container .anp-export-demodata .anp-export-label-checkbox {
+  display: block;
+  font-weight: normal;
+}
+.anp-export-reports {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 145px;
+  overflow-y: auto;
+}
+.anp-export-reports > li:not(:last-child) {
+  padding-bottom: 15px;
+}
+.anp-export-info,
+.anp-export-download {
+  display: inline-block;
+}
+.anp-export-info {
+  width: 230px;
+}
+.anp-export-info .anp-export-reportname {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.anp-export-info .anp-export-reportstatus {
+  color: #aaa;
+  font-size: 12px;
+}
+.anp-export-download {
+  float: right;
+  vertical-align: top;
+  margin-top: 1px;
+}
+.anp-export-download .anp-export-btn-download {
+  padding: 4px 12px;
+}
+.anp-export-download .anp-export-btn-remove {
+  color: #d00;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.anp-export-btn-progress {
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+}
+/* progress animation */
+.anp-export-btn-progress:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: 'Processing';
+  line-height: 2.3;
+  color: #fff;
+  background-color: #5cb85c;
+  background-image: linear-gradient(to bottom, #4cae4c, #5cb85c);
+  background-repeat: repeat-x;
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  -webkit-animation: progress-bar-stripes 0.5s linear infinite;
+  animation: progress-bar-stripes 0.5s linear infinite;
+}
+/* Animation */
+/* Webkit */
+@-webkit-keyframes progress-bar-stripes {
+  to {
+    background-position: 40px 0;
+  }
+  from {
+    background-position: 0 0;
+  }
+}
+/* Firefox */
+/* IE9 */
+/* Opera */
+/* Spec */
+@-webkit-keyframes progress-bar-stripes {
+  to {
+    background-position: 40px 0;
+  }
+  from {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  to {
+    background-position: 40px 0;
+  }
+  from {
+    background-position: 0 0;
+  }
+}
